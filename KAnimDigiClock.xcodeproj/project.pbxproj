@@ -11,6 +11,7 @@
 		AE4422B11CD3D28100CAC3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4422B01CD3D28100CAC3F7 /* main.m */; };
 		AE4422B31CD3D28100CAC3F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4422B21CD3D28100CAC3F7 /* Assets.xcassets */; };
 		AE4422B61CD3D28100CAC3F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE4422B41CD3D28100CAC3F7 /* MainMenu.xib */; };
+		AE4422BF1CD3D32200CAC3F7 /* DigiClockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4422BE1CD3D32200CAC3F7 /* DigiClockVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		AE4422B21CD3D28100CAC3F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE4422B51CD3D28100CAC3F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AE4422B71CD3D28100CAC3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE4422BD1CD3D32200CAC3F7 /* DigiClockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigiClockVC.h; sourceTree = "<group>"; };
+		AE4422BE1CD3D32200CAC3F7 /* DigiClockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigiClockVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 				AE4422B41CD3D28100CAC3F7 /* MainMenu.xib */,
 				AE4422B71CD3D28100CAC3F7 /* Info.plist */,
 				AE4422AF1CD3D28100CAC3F7 /* Supporting Files */,
+				AE4422BD1CD3D32200CAC3F7 /* DigiClockVC.h */,
+				AE4422BE1CD3D32200CAC3F7 /* DigiClockVC.m */,
 			);
 			path = KAnimDigiClock;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE4422B11CD3D28100CAC3F7 /* main.m in Sources */,
+				AE4422BF1CD3D32200CAC3F7 /* DigiClockVC.m in Sources */,
 				AE4422AE1CD3D28100CAC3F7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

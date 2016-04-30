@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,12 +12,23 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="cfJ-Wt-1Xd" customClass="DigiClockVC">
+            <connections>
+                <outlet property="hour1View" destination="vGw-ED-f3k" id="Aer-5B-alq"/>
+                <outlet property="hour2View" destination="dKK-ff-eWH" id="ifF-5K-Q6u"/>
+                <outlet property="minute1View" destination="Bjm-68-cvH" id="2x6-d0-Evh"/>
+                <outlet property="minute2View" destination="gGw-bW-kw1" id="Q6E-yO-XT7"/>
+                <outlet property="second1View" destination="d6A-cv-ky2" id="kWR-cy-bFP"/>
+                <outlet property="second2View" destination="QI2-ca-X4T" id="IVz-c5-C6P"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="DdR-gd-Hrn"/>
+            </connections>
+        </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="KAnimDigiClock" id="1Xt-HY-uBw">
@@ -636,8 +648,8 @@
                                     <action selector="performMiniaturize:" target="-1" id="VwT-WD-YPe"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Zoom" id="R4o-n2-Eq4">
-                                <modifierMask key="keyEquivalentModifierMask"/>
+                            <menuItem title="Zoom" keyEquivalent="z" id="R4o-n2-Eq4">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="DIl-cC-cCs"/>
                                 </connections>
@@ -667,14 +679,38 @@
             </items>
         </menu>
         <window title="KAnimDigiClock" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="contentRect" x="335" y="390" width="660" height="360"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="660" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dKK-ff-eWH" userLabel="Hour 2">
+                        <rect key="frame" x="118" y="110" width="100" height="140"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bjm-68-cvH" userLabel="Minute 1">
+                        <rect key="frame" x="232" y="110" width="100" height="140"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-bW-kw1" userLabel="Minute 2">
+                        <rect key="frame" x="328" y="110" width="100" height="140"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d6A-cv-ky2" userLabel="Second 1">
+                        <rect key="frame" x="442" y="110" width="100" height="140"/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QI2-ca-X4T" userLabel="Second 2">
+                        <rect key="frame" x="540" y="110" width="100" height="140"/>
+                    </customView>
+                    <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vGw-ED-f3k" userLabel="Hour 1">
+                        <rect key="frame" x="20" y="110" width="100" height="140"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Mlp-ba-OyF"/>
+                        </constraints>
+                    </customView>
+                </subviews>
             </view>
+            <point key="canvasLocation" x="359" y="364"/>
         </window>
     </objects>
 </document>
